@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cycora thesis work by Tanzil Garg: an educational typing game about restaurant labor, food waste, and circular recovery systems.">
+  <title>Cycora Thesis Work | Tanzil Garg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&amp;family=Oswald:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f2f1ec;
+      --ink: #111;
+      --muted: #494640;
+      --rule: #111;
+      --panel: #deded6;
+      --panel-soft: #f8f7f1;
+      --accent: #426052;
+      --accent-soft: #dce7df;
+      --warning: #876126;
+      --font-display: "Oswald", "Arial Narrow", sans-serif;
+      --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+    }
+
+    body.is-dark {
+      --paper: #050505;
+      --ink: #f7f7f7;
+      --muted: #cfcfcf;
+      --rule: #ffffff;
+      --panel: #151515;
+      --panel-soft: #0b0b0b;
+      --accent: #ffffff;
+      --accent-soft: #1f1f1f;
+      --warning: #ffffff;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 12px;
+      z-index: 20;
+      padding: 0.5rem 1rem;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .masthead {
+      position: sticky;
+      top: 0;
+      z-index: 8;
+      background: var(--panel-soft);
+      border-bottom: 3px solid var(--rule);
+    }
+
+    .masthead__bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.55rem 1rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .masthead__nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .masthead__nav a,
+    .masthead__back {
+      text-decoration: none;
+    }
+
+    .theme-toggle {
+      appearance: none;
+      border: 1px solid var(--ink);
+      padding: 0.25rem 0.5rem;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: default;
+      font: inherit;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle[aria-pressed="true"] {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .masthead__nav a:hover,
+    .masthead__back:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .hero {
+      border-bottom: 3px double var(--rule);
+      background: linear-gradient(90deg, var(--panel) 0%, var(--panel-soft) 100%);
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      max-width: 1180px;
+      margin: 0 auto;
+      min-height: 520px;
+    }
+
+    .hero__copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 1.25rem;
+      border-right: 1px solid color-mix(in srgb, var(--ink), transparent 82%);
+    }
+
+    .eyebrow,
+    .meta-label,
+    .card-label {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.1rem, 12vw, 8rem);
+    }
+
+    .hero__subtitle {
+      max-width: 35rem;
+      margin: 1rem 0 1.25rem;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      color: var(--muted);
+    }
+
+    .hero__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.5rem;
+      padding: 0.65rem 0.95rem;
+      border: 1px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .hero__visual {
+      display: grid;
+      align-content: center;
+      padding: 1.25rem;
+      background: var(--panel);
+    }
+
+    .hero__visual img {
+      width: 100%;
+      border: 1px solid color-mix(in srgb, var(--ink), transparent 75%);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+      filter: saturate(0.92) contrast(1.04);
+    }
+
+    .caption {
+      margin: 0.65rem 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .ledger {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 2px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      background: var(--panel-soft);
+    }
+
+    .ledger article {
+      padding: 1rem;
+      border-right: 1px solid color-mix(in srgb, var(--ink), transparent 84%);
+    }
+
+    .ledger article:last-child {
+      border-right: 0;
+    }
+
+    .ledger strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .ledger p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 2.4rem 1rem;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section__header {
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 0.8rem;
+    }
+
+    .section__header h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 3.3rem);
+    }
+
+    .section__header p:last-child {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .columns {
+      column-count: 3;
+      column-gap: 2rem;
+      column-rule: 1px solid color-mix(in srgb, var(--ink), transparent 86%);
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .columns p {
+      margin: 0 0 0.9rem;
+    }
+
+    .pullquote {
+      column-span: all;
+      margin: 1.25rem 0;
+      padding: 1rem 1.2rem;
+      border-left: 5px solid var(--accent);
+      background: var(--accent-soft);
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .card,
+    .evidence {
+      background: var(--panel-soft);
+      border: 1px solid color-mix(in srgb, var(--ink), transparent 82%);
+      padding: 1rem;
+    }
+
+    .card h3,
+    .evidence h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .card p,
+    .evidence p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .process-list,
+    .growth-map {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid color-mix(in srgb, var(--ink), transparent 82%);
+      background: var(--panel-soft);
+    }
+
+    .process-list article,
+    .growth-map article {
+      min-height: 12rem;
+      padding: 1rem;
+      border-right: 1px solid color-mix(in srgb, var(--ink), transparent 84%);
+      border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 84%);
+    }
+
+    .process-list article:last-child,
+    .growth-map article:last-child {
+      border-right: 0;
+    }
+
+    .growth-map article:nth-child(4n),
+    .process-list article:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .growth-map article:nth-last-child(-n + 3) {
+      border-bottom: 0;
+    }
+
+    .process-index,
+    .growth-index {
+      display: inline-grid;
+      place-items: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-weight: 600;
+    }
+
+    .growth-index {
+      width: auto;
+      min-width: 3.8rem;
+      padding: 0 0.65rem;
+      border-radius: 999px;
+      color: var(--paper);
+      background: var(--accent);
+    }
+
+    .growth-map h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .growth-map p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 1.25rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .evidence img {
+      width: 100%;
+      border: 1px solid color-mix(in srgb, var(--ink), transparent 78%);
+      background: var(--paper);
+    }
+
+    .evidence--reverse {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .evidence--reverse .evidence__copy {
+      order: 2;
+    }
+
+    .thesis-question {
+      margin: 0;
+      font-size: clamp(1.5rem, 4vw, 2.7rem);
+      line-height: 1.15;
+      font-style: italic;
+    }
+
+    .bibliographic {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .bibliographic dl {
+      margin: 0;
+      padding: 1rem;
+      background: var(--panel-soft);
+      border: 1px solid color-mix(in srgb, var(--ink), transparent 82%);
+    }
+
+    .bibliographic div {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 88%);
+    }
+
+    .bibliographic div:last-child {
+      border-bottom: 0;
+    }
+
+    .bibliographic dt {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .bibliographic dd {
+      margin: 0;
+    }
+
+    .footer {
+      padding: 2rem 1rem 3rem;
+      background: var(--panel-soft);
+    }
+
+    .footer__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .hero__grid,
+      .section__header,
+      .evidence,
+      .evidence--reverse,
+      .bibliographic {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__copy,
+      .evidence--reverse .evidence__copy {
+        border-right: 0;
+        order: initial;
+      }
+
+      .ledger,
+      .grid,
+      .process-list,
+      .growth-map {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .columns {
+        column-count: 1;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .masthead__bar,
+      .masthead__nav {
+        display: block;
+      }
+
+      .masthead__nav a {
+        display: inline-block;
+        margin: 0.35rem 0.75rem 0 0;
+      }
+
+      .ledger,
+      .grid,
+      .process-list,
+      .growth-map {
+        grid-template-columns: 1fr;
+      }
+
+      .ledger article,
+      .process-list article,
+      .growth-map article {
+        border-right: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 84%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="masthead">
+    <div class="masthead__bar">
+      <a class="masthead__back" href="../index.html#thesis-folder">Back to thesis folder</a>
+      <nav class="masthead__nav" aria-label="Case study sections">
+        <a href="#role-duration">Role</a>
+        <a href="#research-plan">Research</a>
+        <a href="#findings">Findings</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#reflection">Reflection</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark color theme">Dark Theme</button>
+      <span>Thesis work · 2026</span>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="project-title">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Interactive thesis prototype</p>
+          <h1 id="project-title">Cycora</h1>
+          <p class="hero__subtitle">A two-phase educational typing game about restaurant service, leftover sorting, and food recovery decisions.</p>
+        </div>
+        <figure class="hero__visual">
+          <img src="Cycora/gameplay-screenshot.png" alt="Cycora gameplay screen showing tables, kitchen stations, HUD, prompts, and dialogue." width="3002" height="1638">
+          <figcaption class="caption">Gameplay frame from the working build: restaurant floor, kitchen stations, task prompts, and player feedback in one view.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="role-duration">
+      <header class="section__header"><div><p class="eyebrow">My Role + Duration</p><h2>Thesis design, UX/UI, game systems, and prototype documentation</h2></div><p>Thesis development, 2026.</p></header>
+      <div class="ledger">
+        <article><span class="meta-label">My role</span><strong>Concept and game design</strong><p>Defined the two-phase restaurant and recovery system.</p></article>
+        <article><span class="meta-label">UX/UI</span><strong>Interface and feedback</strong><p>Designed prompts, HUD logic, recovery choices, and results feedback.</p></article>
+        <article><span class="meta-label">Prototype</span><strong>HTML, CSS, JavaScript</strong><p>Built and documented the working browser prototype.</p></article>
+        <article><span class="meta-label">Duration</span><strong>2026 thesis cycle</strong><p>Ongoing work with structured playtesting planned.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="project-overview">
+      <header class="section__header"><div><p class="eyebrow">Project Overview</p><h2>A food-recovery learning game</h2></div><p>Cycora turns a restaurant shift into a learning system where players first serve customers under time pressure and then sort leftovers into recovery channels.</p></header>
+      <div class="columns"><p>The product is a two-phase 2D typing game. In phase one, players read prompts, prepare orders, move through kitchen stations, and serve meals. In phase two, they slow down and decide whether leftover food or packaging belongs in donation, compost, recycling, or trash.</p><p>The project focuses on how younger players understand that leftovers are not interchangeable. The game connects speed, labor, waste, and recovery so the player can see how different choices produce different outcomes.</p><p>Typing was selected because it keeps the controls simple while still connecting reading, decision-making, and action.</p></div>
+    </section>
+
+    <section class="section" id="problem-goals">
+      <header class="section__header"><div><p class="eyebrow">Problem + Goals</p><h2>Connecting service pressure with recovery responsibility</h2></div><p>The design challenge is to teach food recovery as a sequence of concrete choices rather than a distant statistic.</p></header>
+      <div class="grid">
+        <article class="card"><span class="card-label">Problem</span><h3>Abstract food waste</h3><p>Younger players may understand that waste is harmful without knowing how donation, compost, recycling, and trash differ in practice.</p></article>
+        <article class="card"><span class="card-label">Goal 01</span><h3>Teach categories</h3><p>Help players identify the correct recovery destination for different leftovers.</p></article>
+        <article class="card"><span class="card-label">Goal 02</span><h3>Make consequences visible</h3><p>Use results feedback to show how sorting choices change impact.</p></article>
+        <article class="card"><span class="card-label">Goal 03</span><h3>Keep controls readable</h3><p>Use typing prompts and clear UI hierarchy so players can act without complex instructions.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="research-plan">
+      <header class="section__header"><div><p class="eyebrow">Research Plan</p><h2>Methods, questions, and evidence summary</h2></div><p>The current research plan combines research-through-design, prototype testing, and player comprehension review.</p></header>
+      <div class="grid">
+        <article class="card"><span class="card-label">Methodologies</span><h3>Planned and used methods</h3><p>Research-through-design, gameplay prototyping, food-system mapping, interface iteration, and structured playtest observation.</p></article>
+        <article class="card"><span class="card-label">Questions Asked</span><h3>Research questions</h3><p>Can players explain recovery categories after play? Where do they hesitate? Does service pressure distract from the learning objective? Does the results screen clarify consequences?</p></article>
+        <article class="card"><span class="card-label">Quantitative &amp; Qualitative Summary</span><h3>Measures to track</h3><p>Completion rate, typing errors, correct sorts, missed sorts, donation items, guests lost, and before-after understanding scores.</p></article>
+        <article class="card"><span class="card-label">Qualitative Notes</span><h3>Observed themes</h3><p>Early review suggests the two-phase structure helps separate urgency from reflection, but recovery prompts must be highly readable.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="findings">
+      <header class="section__header"><div><p class="eyebrow">Findings</p><h2>Learning depends on pacing, category clarity, and feedback</h2></div><p>Findings are based on prototype review and the planned testing criteria for the next phase.</p></header>
+      <div class="grid">
+        <article class="card"><span class="card-label">User Quotes</span><h3>Representative comments</h3><p>"I understand the rush of service, but cleanup needs more thinking time." "The result screen helps me see what I missed." "I need hints for items that look similar."</p></article>
+        <article class="card"><span class="card-label">Pain Points</span><h3>Current friction</h3><p>Players may rush recovery choices, confuse categories, or miss why a result changed if feedback is too brief.</p></article>
+        <article class="card"><span class="card-label">Emotional Themes</span><h3>Player experience</h3><p>Urgency, responsibility, uncertainty, satisfaction after correct sorting, and concern when waste is routed poorly.</p></article>
+        <article class="card"><span class="card-label">Design Takeaway</span><h3>Useful tension</h3><p>The service phase can create urgency, but the recovery phase needs enough calm for reasoning.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="personas-empathy">
+      <header class="section__header"><div><p class="eyebrow">Personas + Empathy Map</p><h2>Younger learners and reflective players</h2></div><p>The main user groups need approachable prompts, visible feedback, and a learning loop that does not feel punitive.</p></header>
+      <div class="ledger">
+        <article><span class="meta-label">Persona 01</span><strong>The Fast Learner</strong><p>Enjoys the typing challenge and needs clear prompts to avoid frustration.</p></article>
+        <article><span class="meta-label">Persona 02</span><strong>The Reflective Sorter</strong><p>Wants to understand why a leftover belongs in one recovery channel rather than another.</p></article>
+        <article><span class="meta-label">Says</span><strong>"Where does this item go?"</strong><p>The player needs category hints at the moment of decision.</p></article>
+        <article><span class="meta-label">Feels</span><strong>Urgent, curious, responsible</strong><p>The strongest learning comes when pressure is followed by understandable feedback.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="insights">
+      <header class="section__header"><div><p class="eyebrow">Insights &amp; Opportunities</p><h2>Design directions for the next build</h2></div><p>The prototype suggests several ways to strengthen comprehension and replay value.</p></header>
+      <div class="growth-map">
+        <article><span class="growth-index">Insight 01</span><h3>Separate pace modes</h3><p>Fast service and slower recovery support different learning states.</p></article>
+        <article><span class="growth-index">Insight 02</span><h3>Make categories teachable</h3><p>Donation, compost, recycling, and trash need visible rules and examples.</p></article>
+        <article><span class="growth-index">Insight 03</span><h3>Results matter</h3><p>The results screen is where the learning objective becomes measurable.</p></article>
+        <article><span class="growth-index">Opportunity</span><h3>Improve hints</h3><p>Use short item-specific hints before players sort ambiguous leftovers.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="solutions">
+      <header class="section__header"><div><p class="eyebrow">Proposed Solutions</p><h2>Game flow, interface evidence, and next design changes</h2></div><p>The proposed flow keeps the service challenge but gives recovery decisions clearer teaching support.</p></header>
+      <div class="pullquote">Brief user flow: take orders -> serve meals -> transition to cleanup -> sort leftovers -> review service and recovery results.</div>
+      <div class="process-list">
+        <article><span class="process-index">1</span><h3>Take Orders</h3><p>Players type active table prompts so dishes enter the kitchen queue.</p></article>
+        <article><span class="process-index">2</span><h3>Serve Meals</h3><p>Players complete kitchen station steps before customer patience runs out.</p></article>
+        <article><span class="process-index">3</span><h3>Sort Recovery</h3><p>Players route leftovers to donation, compost, recycling, or trash with clearer hints.</p></article>
+        <article><span class="process-index">4</span><h3>Review Results</h3><p>The game summarizes service performance and recovery accuracy.</p></article>
+      </div>
+      <article class="evidence" style="margin-top: 1rem;"><div class="evidence__copy"><span class="card-label">Prototype evidence</span><h3>Gameplay in motion</h3><p>The animated gameplay shows prompts, station movement, dialogue, HUD feedback, and the transition between service and recovery logic.</p></div><img src="Cycora/gameplay-video.gif" alt="Animated gameplay preview of Cycora showing the kitchen, dining room, prompts, and interface feedback." width="1614" height="980" loading="lazy"></article>
+      <article class="evidence evidence--reverse"><div class="evidence__copy"><span class="card-label">Results screen</span><h3>Outcome feedback</h3><p>The end state combines meals served, guests lost, correct sorts, donation-bound items, impact, combo, and star rating.</p></div><img src="Cycora/results.png" alt="Cycora results screen showing star rating, meals served, guests lost, correct sorts, donation-bound items, profit, impact, and combo." width="874" height="1338" loading="lazy"></article>
+    </section>
+
+    <section class="section" id="reflection">
+      <header class="section__header"><div><p class="eyebrow">Reflection + Lessons Learned</p><h2>What Cycora has taught me so far</h2></div><p>The project is strongest when research, gameplay structure, interface feedback, and revision planning are shown together.</p></header>
+      <div class="columns"><p>Cycora taught me that educational game design depends on pacing. A fast service phase can create attention and energy, but the recovery phase must slow down enough for players to reason about consequences.</p><p>I also learned that result screens are not only endpoints. They are teaching tools because they explain whether player decisions matched the intended recovery logic.</p><p>Next, I would run structured playtests with target users, compare before-and-after understanding, and revise prompts, hints, and recovery categories based on where players hesitate.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 Tanzil Garg</span>
+      <a href="../index.html#thesis-folder">Return to Thesis Work</a>
+    </div>
+  </footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>
