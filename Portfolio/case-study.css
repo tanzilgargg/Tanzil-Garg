@@ -1,0 +1,157 @@
+/* Editorial overrides for legacy case study pages (loaded after embedded <style>) */
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Playfair+Display:ital,wght@0,400;0,700&display=swap");
+@import url("styles.css");
+
+/* Remap “neon” tokens to warm ink / newsprint for all case-study markup */
+body.case-study-page {
+  --color-background: #f4f1ea;
+  --color-text: #1a1a1a;
+  --color-text-muted: #4a4844;
+  --color-purple: #5c4a38;
+  --color-purple-dark: #3d3228;
+  --color-purple-light: #6b5344;
+  --color-pink: #6b5d4d;
+  --color-pink-dark: #4a4036;
+  --color-pink-light: #8a7a68;
+  --color-cyan: #4a5a58;
+  --color-cyan-dark: #2f3d3c;
+  --color-cyan-light: #6a7a78;
+  --color-border: rgba(26, 26, 26, 0.18);
+  --color-card-bg: rgba(255, 255, 255, 0.55);
+  --gradient-primary: linear-gradient(to right, #4a3d32, #6b5344);
+  --gradient-text: linear-gradient(to right, #2a2420, #4a4036, #3d4a48);
+  --shadow-glow: 0 8px 28px rgba(26, 26, 26, 0.08);
+  font-family: "Newsreader", Georgia, "Times New Roman", serif !important;
+  background-color: var(--color-background) !important;
+  color: var(--color-text) !important;
+}
+
+body.case-study-page h1,
+body.case-study-page h2,
+body.case-study-page h3,
+body.case-study-page h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+}
+
+/* Skip link (matches website intent) */
+.case-study-skip {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 3000;
+  padding: 0.5rem 1rem;
+  background: #0a0a0a;
+  color: #f4f1ea;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.case-study-skip:focus {
+  top: 12px;
+  outline: 2px solid #f4f1ea;
+  outline-offset: 2px;
+}
+
+/* Masthead + hero: see project-broadsheet.css */
+
+/* Legacy header fallback (no .bs-hero) */
+body.case-study-page .case-study-header:not(.bs-hero) {
+  background: linear-gradient(to bottom, #f4f1ea 0%, #ebe6dc 100%) !important;
+  border-bottom: 3px double #1a1a1a !important;
+  min-height: auto !important;
+  padding: 3rem 0 2.5rem !important;
+}
+
+body.case-study-page .case-study-title,
+body.case-study-page .hero-title {
+  color: #1a1a1a !important;
+  background: none !important;
+  -webkit-text-fill-color: inherit !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+
+body.case-study-page .case-study-subtitle,
+body.case-study-page .hero-subtitle {
+  color: var(--color-text-muted) !important;
+}
+
+body.case-study-page .case-study-section {
+  border-bottom-color: var(--color-border) !important;
+}
+
+body.case-study-page .section-heading {
+  color: #1a1a1a !important;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+body.case-study-page .quote-block {
+  background: rgba(139, 105, 20, 0.08) !important;
+  border-left-color: #6b5344 !important;
+}
+
+body.case-study-page .stat-number {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #1a1a1a !important;
+  -webkit-text-fill-color: #1a1a1a !important;
+}
+
+body.case-study-page .solution-card:hover {
+  box-shadow: var(--shadow-glow) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.case-study-page .footer {
+  background: #ebe6dc !important;
+  border-top: 3px double #1a1a1a !important;
+  color: #1a1a1a !important;
+}
+
+body.case-study-page .footer .logo,
+body.case-study-page .footer a {
+  color: #1a1a1a !important;
+}
+
+body.case-study-page .social-icon {
+  border-color: rgba(26, 26, 26, 0.25) !important;
+}
+
+body.case-study-page .social-icon:hover {
+  background: rgba(26, 26, 26, 0.06) !important;
+}
+
+body.case-study-page .case-study-content {
+  background: #f4f1ea !important;
+  color: #1a1a1a !important;
+}
+
+body.case-study-page .back-to-projects {
+  color: #1a1a1a !important;
+}
+
+body.case-study-page .hero-content .hero-badge {
+  color: var(--color-text-muted) !important;
+  border-color: var(--color-border) !important;
+}
+
+body.case-study-page .btn-primary {
+  background: #1a1a1a !important;
+  color: #f4f1ea !important;
+  box-shadow: none !important;
+}
+
+body.case-study-page .btn-primary:hover {
+  background: #3d3d3d !important;
+  transform: none !important;
+}
+
+body.case-study-page .section-title {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #1a1a1a !important;
+  -webkit-text-fill-color: #1a1a1a !important;
+}

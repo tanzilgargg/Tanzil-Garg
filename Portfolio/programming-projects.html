@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Programming folder by Tanzil Garg, collecting immersive interactive programming projects.">
+  <title>Tanzil Garg | Programming Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-frame" aria-hidden="true"></div>
+
+  <header class="masthead" role="banner">
+    <div class="masthead__grid">
+      <div class="masthead__meta masthead__meta--left">
+        <span>Student edition</span>
+        <span>Programming folder · Immersive systems</span>
+      </div>
+      <div class="masthead__emblem">
+        <span class="masthead__blackletter">Tanzil Garg</span>
+      </div>
+      <div class="masthead__meta masthead__meta--right">
+        <span class="masthead__line">p5.js · camera effects · interactive media</span>
+      </div>
+    </div>
+    <p class="masthead__subline">
+      <span class="masthead__journal">The design journal of</span>
+      <span class="masthead__edition" aria-hidden="true">PROGRAMMING</span>
+      <span class="visually-hidden">Programming</span>
+    </p>
+  </header>
+
+  <nav class="site-nav" id="site-navigation" aria-label="Primary">
+    <ul class="site-nav__list">
+      <li><a class="site-nav__link" href="index.html#selected-work">Work</a></li>
+      <li><a class="site-nav__link" href="#programming-overview" data-section="programming-overview">Overview</a></li>
+      <li><a class="site-nav__link" href="#programming-gallery" data-section="programming-gallery">Projects</a></li>
+      <li><a class="site-nav__link" href="art-gallery.html">Art</a></li>
+      <li><a class="site-nav__link" href="index.html#about">About</a></li>
+      <li><a class="site-nav__link" href="#contact" data-section="contact">Contact</a></li>
+      <li>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark color theme">Dark Theme</button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="headline-band">
+    <hr class="rule rule--thick">
+    <p class="headline-band__kicker">Immersive experiences · p5.js · generative visuals · social camera effects</p>
+    <hr class="rule rule--thick">
+  </div>
+
+  <main id="main-content">
+    <section class="section programming-hero" id="programming-overview" aria-labelledby="programming-title">
+      <div class="programming-hero__grid">
+        <article class="programming-hero__statement" data-reveal>
+          <p class="section__label">Programming folder</p>
+          <h1 class="programming-hero__title" id="programming-title">Code projects with visible interaction and feedback</h1>
+          <p class="programming-hero__lead text-justify"><span class="drop-cap">T</span>his folder contains three programming projects: a generative fractal tree, a social-camera effect study, and an LED watch interface. The projects examine how code can produce responsive visual systems, compact interactions, and screen-based feedback rather than static images.</p>
+          <p class="text-justify">The design emphasis is interaction: what the user can control, what feedback the system provides, and how the visual output communicates the underlying logic.</p>
+          <p class="text-justify">The projects are evaluated through responsiveness, clarity of controls, relationship between input and output, and the ability of the visual system to communicate behavior without requiring a technical explanation first.</p>
+        </article>
+
+        <figure class="programming-hero__feature" data-reveal>
+          <img src="Programming/Neon Fractal Tree/Neon Fractal Tree Visualization.png" alt="Neon fractal tree visualization with glowing branching forms" width="3014" height="1712" loading="eager" decoding="async">
+          <figcaption class="figure-caption">Programming presented through visible behavior: branching, motion, filtering, feedback, and output.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <hr class="rule rule--section">
+
+    <section class="section programming-folder-section" id="programming-gallery" aria-labelledby="programming-gallery-title">
+      <header class="section__header" data-reveal>
+        <p class="section__label">Programming projects</p>
+        <h2 class="section__title" id="programming-gallery-title">Immersive project files</h2>
+        <p class="section__lede">Three projects documenting code as interaction design, visual system design, and evidence of user feedback. Each entry explains the interface structure, the user's role, and the design rationale behind the output.</p>
+      </header>
+
+      <div class="programming-project-grid">
+        <article class="programming-project" id="neon-fractal-tree" data-reveal>
+          <a class="programming-project__media" href="neon-fractal-tree.html">
+            <img src="Programming/Neon Fractal Tree/Neon Fractal Tree.png" alt="Neon fractal tree interface with a glowing tree and control panels" width="3002" height="1700" loading="lazy" decoding="async">
+          </a>
+          <div class="programming-project__body">
+            <p class="section__label">Audio-visual experience design</p>
+            <h3>Neon Fractal Tree</h3>
+            <p>A generative, audio-reactive visual experience driven by microphone input, developed as a studio prototype to examine calm interaction, passive engagement, and meditative screen-based attention.</p>
+            <a class="programming-project__link" href="neon-fractal-tree.html">Open project page</a>
+          </div>
+        </article>
+
+        <article class="programming-project" id="instagram-effect" data-reveal>
+          <a class="programming-project__media programming-project__media--portrait" href="instagram-effect.html">
+            <img src="Programming/Instagram Effect/art-project-16.jpg" alt="Instagram effect visual output" width="1080" height="1350" loading="lazy" decoding="async">
+          </a>
+          <div class="programming-project__body">
+            <p class="section__label">Camera effect study</p>
+            <h3>Instagram Effect</h3>
+            <p>A camera-effect study analyzing portrait framing, filtered identity, preview feedback, and the user's decision to share or reject an image. The project treats the filter as an interaction pattern, not only a visual treatment.</p>
+            <a class="programming-project__link" href="instagram-effect.html">Open project page</a>
+          </div>
+        </article>
+
+        <article class="programming-project programming-project--wide" id="led-watch-interface" data-reveal>
+          <div class="programming-project__media programming-project__media--video">
+            <video controls preload="metadata" playsinline>
+              <source src="Programming/LED Watch Interface.MOV" type="video/quicktime">
+            </video>
+          </div>
+          <div class="programming-project__body">
+            <p class="section__label">Wearable interface</p>
+            <h3>LED Watch Interface</h3>
+            <p>2023 project: a compact watch interface study focused on glanceable information, display hierarchy, and LED-style feedback. The project fits the Programming gallery as an interface prototype where the screen size, timing, and visual state changes define the user experience.</p>
+            <a class="programming-project__link" href="Programming/LED Watch Interface.MOV">Open video file</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact" role="contentinfo" aria-labelledby="footer-contact-title">
+    <div class="site-footer__inner">
+      <h2 class="site-footer__title" id="footer-contact-title">Contact</h2>
+      <ul class="site-footer__links" data-reveal>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mailto:tanzilgarg14@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/tanzilgarg/">LinkedIn</a></li>
+      </ul>
+      <p class="site-footer__copyright" data-reveal>&copy; <span id="currentYear">2026</span> Tanzil Garg. Student work; please cite if you reference this work.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

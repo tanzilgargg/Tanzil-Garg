@@ -1,1 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design site by Tanzil Garg, Digital Futures student: projects across UX, digital media, and interactive technology, with reflection toward thesis.">
+  <title>Tanzil Garg | Digital Futures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
+  <div class="page-frame" aria-hidden="true"></div>
+
+  <header class="masthead" role="banner">
+    <div class="masthead__grid">
+      <div class="masthead__meta masthead__meta--left">
+        <span>Student edition</span>
+        <span>4 Year record</span>
+      </div>
+      <div class="masthead__emblem">
+        <span class="masthead__blackletter">Tanzil Garg</span>
+      </div>
+      <div class="masthead__meta masthead__meta--right">
+        <span class="masthead__line">Digital Futures</span>
+      </div>
+    </div>
+    <p class="masthead__subline">
+      <span class="masthead__journal">The design journal of</span>
+      <span class="masthead__edition" aria-hidden="true">SELECTED WORK</span>
+      <span class="visually-hidden">Selected Work</span>
+    </p>
+  </header>
+
+  <nav class="site-nav" id="site-navigation" aria-label="Primary">
+    <ul class="site-nav__list">
+      <li><a class="site-nav__link" href="#selected-work" data-section="selected-work">Work</a></li>
+      <li><a class="site-nav__link" href="#featured-case-study" data-section="featured-case-study">Featured</a></li>
+      <li><a class="site-nav__link" href="#process" data-section="process">Process</a></li>
+      <li><a class="site-nav__link" href="art-gallery.html">Art</a></li>
+      <li><a class="site-nav__link" href="#about" data-section="about">About</a></li>
+      <li><a class="site-nav__link" href="#contact" data-section="contact">Contact</a></li>
+      <li>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark color theme">Dark Theme</button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="headline-band">
+    <hr class="rule rule--thick">
+    <p class="headline-band__kicker">Game design · Thesis work · Programming · Art</p>
+    <hr class="rule rule--thick">
+  </div>
+
+  <main id="main-content">
+    <!-- Front page -->
+    <section class="section front-page" id="front-page" aria-labelledby="front-title">
+      <div class="front-page__columns">
+        <article class="front-page__lead" data-reveal>
+          <h1 class="front-page__title" id="front-title">Design beyond the screen</h1>
+          <p class="front-page__deck">A design site documenting game design, thesis research, programming studies, and visual work through process, evidence, and reflection.</p>
+          <p class="front-page__body text-justify"><span class="drop-cap">I</span> work across UX, digital media, and interactive technology. Each project is presented through a clear design question, the methods used to investigate it, visual or playable evidence, and the design decisions that shaped the outcome.</p>
+          <p class="front-page__body text-justify">The work is organized into folders so reviewers can evaluate each area by discipline: rule-based game systems, thesis research, coded interaction studies, and visual investigations.</p>
+          <p class="front-page__body text-justify">Across the website, I focus on how interfaces communicate, how users receive feedback, how visual systems guide attention, and how prototypes can make an abstract design question concrete enough to evaluate.</p>
+          <div class="front-page__ctas">
+            <a class="btn btn--primary" href="#selected-work">Selected work</a>
+            <a class="btn btn--ghost" href="#featured-case-study">Featured story</a>
+            <a class="btn btn--ghost" href="mailto:tanzilgarg14@gmail.com">Contact</a>
+          </div>
+        </article>
+
+        <aside class="front-page__sidebar" data-reveal>
+          <h2 class="sidebar__label">Profile</h2>
+          <dl class="dateline">
+            <dt>Program</dt>
+            <dd>Digital Futures</dd>
+            <dt>Areas of study</dt>
+            <dd>UX and interaction; digital media; emerging and interactive technology</dd>
+            <dt>Project categories</dt>
+            <dd>Game design; thesis work; programming; art</dd>
+            <dt>Tools</dt>
+            <dd>Figma, FigJam, Power Platform, HTML/CSS/JS, p5.js, research synthesis</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <hr class="rule rule--section">
+
+    <!-- Cover story -->
+    <section class="section cover-story" id="featured-case-study" aria-labelledby="cover-story-title">
+      <header class="section__header" data-reveal>
+        <p class="section__label">Cover essay</p>
+        <h2 class="section__title" id="cover-story-title">Learning in Digital Futures</h2>
+        <p class="cover-story__byline">Tanzil Garg · UX, digital media, and interactive technology</p>
+      </header>
+
+      <div class="cover-story__grid">
+        <article class="cover-story__article" data-reveal>
+          <p class="text-justify">I chose Digital Futures to study how interface design, media systems, and emerging technologies shape everyday behavior. My work is not limited to finished screens; it also includes prototypes, games, and experiments that make a design problem testable.</p>
+          <p class="text-justify">Across projects, I translate research notes, sketches, interface patterns, and critique into design decisions. When a concept is unclear, I revise the layout, interaction model, information hierarchy, or visual system so the project communicates more precisely.</p>
+          <p class="text-justify">The goal of this website is documentation with clarity. Each project includes enough context for a reviewer to understand the problem, inspect the process, and evaluate the final outcome.</p>
+          <p class="text-justify">This website demonstrates structured inquiry, attention to users, material experimentation, and specific reflection on what still requires testing or refinement.</p>
+          <p class="text-justify">The projects also show how I connect conceptual framing with production details: rules, controls, prompts, visual hierarchy, media assets, documentation, and feedback loops are treated as part of the same design argument.</p>
+        </article>
+
+        <figure class="cover-story__visual" data-reveal>
+          <div class="cover-story__photo-wrap">
+            <img
+              class="cover-story__photo"
+              src="Profile.jpg"
+              alt="Portrait of Tanzil Garg, Digital Futures student"
+              width="1536"
+              height="2048"
+              loading="eager"
+              decoding="async"
+            >
+          </div>
+          <figcaption class="figure-caption">Portrait · site author and interaction designer.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <hr class="rule rule--section">
+
+    <!-- Selected work -->
+    <section class="section work" id="selected-work" aria-labelledby="work-title">
+      <header class="section__header" data-reveal>
+        <p class="section__label">Project library</p>
+        <h2 class="section__title" id="work-title">Design folders</h2>
+        <p class="section__lede">Projects are grouped by discipline so the work can be reviewed through clear categories, consistent evidence, and comparable design outcomes. Each folder collects related work and identifies the main design material: rules and play, thesis research, coded interaction, or visual composition.</p>
+      </header>
+
+      <div class="work-categories">
+        <section class="work-category" id="game-design-folder" aria-labelledby="game-design-title" data-reveal>
+          <header class="work-category__header">
+            <a class="work-category__folder-link" href="game-design-projects.html" aria-label="Open Game Design folder page">
+              <span class="section__label">Folder 01</span>
+              <span class="work-category__title" id="game-design-title">Game Design</span>
+              <span class="work-category__count">3 projects</span>
+            </a>
+          </header>
+          <ul class="work__grid work__grid--folder">
+            <li class="work-card">
+              <a class="work-card__link" href="ujesca.html">
+                <div class="work-card__thumb" role="presentation">
+                  <img class="work-card__thumb-img" src="Game Design/UJESCA/UJESCA_1.jpg" alt="" width="1030" height="1390" loading="lazy" decoding="async">
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">UJESCA</h3>
+                  <p class="work-card__lede">Hybrid game design project documenting physical components, rules, scoring logic, sound, and evidence of play. The case study explains how player orientation is supported through materials, feedback, and system structure.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>Hybrid</li>
+                    <li>Rules</li>
+                    <li>Play</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+            <li class="work-card">
+              <a class="work-card__link" href="anti-monopoly.html">
+                <div class="work-card__thumb" role="presentation">
+                  <img class="work-card__thumb-img" src="Game Design/Anti-Monopoly Game/Home Screen.png" alt="" width="3024" height="1964" loading="lazy" decoding="async">
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">Anti-Monopoly: Breaking the System</h3>
+                  <p class="work-card__lede">Critical Twine modification that uses branching choices to examine ownership, debt, inequality, and system pressure. The project treats game design as a way to make economic critique playable.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>Twine</li>
+                    <li>Critical Mod</li>
+                    <li>Systems</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+            <li class="work-card">
+              <a class="work-card__link" href="space-crate.html">
+                <div class="work-card__thumb" role="presentation">
+                  <img class="work-card__thumb-img" src="Game Design/Space Crate.jpg" alt="" width="1113" height="778" loading="lazy" decoding="async">
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">Space Crate</h3>
+                  <p class="work-card__lede">3D game asset created in Maya and painted in Substance Painter, presented as a prop-design study for a sci-fi game environment.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>Maya</li>
+                    <li>Substance Painter</li>
+                    <li>3D Asset</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-category" id="thesis-folder" aria-labelledby="thesis-title" data-reveal>
+          <header class="work-category__header">
+            <a class="work-category__folder-link" href="thesis/cycora-thesis.html" aria-label="Open Thesis Work page">
+              <span class="section__label">Folder 02</span>
+              <span class="work-category__title" id="thesis-title">Thesis Work</span>
+              <span class="work-category__count">1 project</span>
+            </a>
+          </header>
+          <ul class="work__grid work__grid--folder">
+            <li class="work-card work-card--dual">
+              <a class="work-card__link" href="thesis/cycora-thesis.html">
+                <div class="work-card__thumb" role="presentation">
+                  <img class="work-card__thumb-img" src="thesis/Cycora/gameplay-screenshot.png" alt="" width="3002" height="1638" loading="lazy" decoding="async">
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">Cycora Thesis Work</h3>
+                  <p class="work-card__lede">Thesis prototype using a typing-game format to examine restaurant labor, food waste, and circular recovery decisions. The project connects service speed, sorting accuracy, and end-state feedback into one learning loop.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>Thesis</li>
+                    <li>Game</li>
+                    <li>Food Systems</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-category" id="programming-folder" aria-labelledby="programming-title" data-reveal>
+          <header class="work-category__header">
+            <a class="work-category__folder-link" href="programming-projects.html" aria-label="Open Programming folder page">
+              <span class="section__label">Folder 03</span>
+              <span class="work-category__title" id="programming-title">Programming</span>
+              <span class="work-category__count">3 projects</span>
+            </a>
+          </header>
+          <ul class="work__grid work__grid--folder">
+            <li class="work-card work-card--dual">
+              <a class="work-card__link" href="neon-fractal-tree.html">
+                <div class="work-card__thumb" role="presentation">
+                  <img class="work-card__thumb-img" src="Programming/Neon Fractal Tree/Neon Fractal Tree Visualization.png" alt="" width="3014" height="1712" loading="lazy" decoding="async">
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">Neon Fractal Tree</h3>
+                  <p class="work-card__lede">Generative, audio-reactive visual experience driven by microphone input, examining calm interaction, passive engagement, and meditative screen-based attention.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>p5.js</li>
+                    <li>Canvas</li>
+                    <li>Audio</li>
+                  </ul>
+                </div>
+              </a>
+              <p class="work-card__secondary-link"><a href="Programming/Neon Fractal Tree/index.html">Open live p5 sketch -></a></p>
+            </li>
+            <li class="work-card">
+              <a class="work-card__link" href="instagram-effect.html">
+                <div class="work-card__thumb" role="presentation">
+                  <img class="work-card__thumb-img" src="Programming/Instagram Effect/art-project-16.jpg" alt="" width="1080" height="1350" loading="lazy" decoding="async">
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">Instagram Effect</h3>
+                  <p class="work-card__lede">Social-camera study examining filtered identity, portrait feedback, and user decision-making around shareable images. The case frames image effects as compact interfaces that shape self-presentation.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>Effect</li>
+                    <li>Visual</li>
+                    <li>AR Study</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+            <li class="work-card work-card--dual">
+              <a class="work-card__link" href="programming-projects.html#led-watch-interface">
+                <div class="work-card__thumb" role="presentation">
+                  <video class="work-card__thumb-img" muted playsinline preload="metadata">
+                    <source src="Programming/LED Watch Interface.MOV" type="video/quicktime">
+                  </video>
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">LED Watch Interface</h3>
+                  <p class="work-card__lede">2023 project: wearable interface prototype exploring compact display hierarchy, glanceable information, and LED-style interaction feedback.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>Wearable</li>
+                    <li>Interface</li>
+                    <li>LED</li>
+                  </ul>
+                </div>
+              </a>
+              <p class="work-card__secondary-link"><a href="Programming/LED Watch Interface.MOV">Open video -></a></p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-category" id="art-folder" aria-labelledby="art-title" data-reveal>
+          <header class="work-category__header">
+            <a class="work-category__folder-link" href="art-gallery.html" aria-label="Open Art folder page">
+              <span class="section__label">Folder 04</span>
+              <span class="work-category__title" id="art-title">Art</span>
+              <span class="work-category__count work-category__count-link">15 projects</span>
+            </a>
+          </header>
+          <ul class="work__grid work__grid--folder">
+            <li class="work-card">
+              <a class="work-card__link" href="art-gallery.html">
+                <div class="work-card__thumb" role="presentation">
+                  <img class="work-card__thumb-img" src="Art/art-project-01.jpg" alt="" width="1400" height="1037" loading="lazy" decoding="async">
+                </div>
+                <div class="work-card__body">
+                  <h3 class="work-card__title">Art Gallery &amp; Artist Statement</h3>
+                  <p class="work-card__lede">Visual research gallery examining pattern, cultural memory, devotional imagery, gaze, and place-based composition. The gallery presents art practice as evidence of visual hierarchy, rhythm, and symbolic reading.</p>
+                  <ul class="work-card__tags" aria-label="Tags">
+                    <li>Gallery</li>
+                    <li>Statement</li>
+                    <li>Pattern</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process" id="process" aria-labelledby="process-infographic-title">
+      <header class="section__header" data-reveal>
+        <p class="section__label">Design process</p>
+      </header>
+
+      <div class="process__infographic" data-reveal>
+        <div class="growth-process">
+          <div class="growth-process__intro">
+            <h2 class="growth-process__title" id="process-infographic-title">The Seed-to-Tree Process</h2>
+            <p class="growth-process__subtitle">A project moves from an initial question through research, ideation, structure, feature decisions, visual resolution, and reflection.</p>
+          </div>
+
+          <div class="growth-tree" aria-hidden="true">
+            <span class="growth-tree__soil"></span>
+            <span class="growth-tree__seed"></span>
+            <span class="growth-tree__root growth-tree__root--one"></span>
+            <span class="growth-tree__root growth-tree__root--two"></span>
+            <span class="growth-tree__root growth-tree__root--three"></span>
+            <span class="growth-tree__sprout"></span>
+            <span class="growth-tree__trunk"></span>
+            <span class="growth-tree__branch growth-tree__branch--one"></span>
+            <span class="growth-tree__branch growth-tree__branch--two"></span>
+            <span class="growth-tree__branch growth-tree__branch--three"></span>
+            <span class="growth-tree__branch growth-tree__branch--faded"></span>
+            <span class="growth-tree__leaf growth-tree__leaf--one"></span>
+            <span class="growth-tree__leaf growth-tree__leaf--two"></span>
+            <span class="growth-tree__leaf growth-tree__leaf--three"></span>
+            <span class="growth-tree__leaf growth-tree__leaf--four"></span>
+            <span class="growth-tree__rings"></span>
+          </div>
+
+          <ol class="growth-steps" aria-label="Design process as tree growth">
+            <li>
+              <span class="growth-steps__label">Seed</span>
+              <span class="growth-steps__line">The initial question defines the project scope and identifies what the design must investigate.</span>
+            </li>
+            <li>
+              <span class="growth-steps__label">Roots</span>
+              <span class="growth-steps__line">Research gathers user needs, contextual constraints, precedent observations, and criteria for evaluation.</span>
+            </li>
+            <li>
+              <span class="growth-steps__label">Sprout</span>
+              <span class="growth-steps__line">Ideation develops possible directions through sketches, wireframes, prototypes, and comparison.</span>
+            </li>
+            <li>
+              <span class="growth-steps__label">Trunk</span>
+              <span class="growth-steps__line">The core structure forms through information architecture, user flows, rule systems, and interaction logic.</span>
+            </li>
+            <li>
+              <span class="growth-steps__label">Branches</span>
+              <span class="growth-steps__line">Features are tested against the project goal; useful decisions remain while weaker directions are removed.</span>
+            </li>
+            <li>
+              <span class="growth-steps__label">Leaves &amp; Rings</span>
+              <span class="growth-steps__line">The final interface is documented alongside feedback, testing notes, and opportunities for revision.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <hr class="rule rule--inset">
+
+      <article class="process-essay" aria-labelledby="essay-title">
+        <h3 class="process-essay__title" id="essay-title" data-reveal>How Projects Grow</h3>
+        <p class="process-essay__lead text-justify" data-reveal>A project begins with a defined question. Early work focuses on the audience, the design context, the constraints, and the communication goal of the experience.</p>
+
+        <div class="process-essay__columns text-justify" data-reveal>
+          <p>The research phase records user needs, context, constraints, precedents, and criteria for success. This work supports the visible interface even when it does not appear directly in the final output.</p>
+          <p>Ideation turns the research into possible directions through sketches, wireframes, interaction flows, and early prototypes. The structure of the project is then clarified through hierarchy, navigation, and system logic.</p>
+          <p>Feature decisions are evaluated against the project goal. The final interface is presented with feedback and revision notes so the outcome can be understood as part of a design process rather than only as a finished image.</p>
+        </div>
+
+        <blockquote class="process-essay__pullquote" data-reveal>
+          <p>The final interface is the visible result; the research, structure, decisions, and feedback explain why it takes that form.</p>
+        </blockquote>
+      </article>
+    </section>
+
+    <hr class="rule rule--section">
+
+    <!-- About -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about__grid">
+        <article class="about__main" data-reveal>
+          <header class="section__header section__header--inline">
+            <p class="section__label">About</p>
+            <h2 class="section__title" id="about-title">About this website</h2>
+          </header>
+          <p class="text-justify">My name is Tanzil Garg, and I study Digital Futures. My work connects UX design, digital media, and interactive technology through interfaces, games, visual systems, and prototypes. I focus on clarity, usability, evidence-based iteration, and the relationship between design decisions and the people who interact with them.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact" role="contentinfo" aria-labelledby="footer-contact-title">
+    <div class="site-footer__inner">
+      <h2 class="site-footer__title" id="footer-contact-title">Contact</h2>
+      <ul class="site-footer__links" data-reveal>
+        <li><a href="https://github.com/">GitHub</a></li>
+        <li><a href="mailto:tanzilgarg14@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/tanzilgarg/">LinkedIn</a></li>
+      </ul>
+      <p class="site-footer__copyright" data-reveal>© <span id="currentYear">2026</span> Tanzil Garg. Student work; please cite if you reference this work.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
